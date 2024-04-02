@@ -1,25 +1,37 @@
 const typeDefs = `
   type User {
     _id: ID
-    username: String
+    user: String
     email: String
     password: String
-    thoughts: [Thought]!
+    FavArtists: ID!
   }
 
-  type Thought {
+  type Artist {
+    id: ID
+    name: String
+    description: String
+    location: String
+    image: [String]
+    products: [Product]
+  }
+
+
+  type Product {
     _id: ID
-    thoughtText: String
-    thoughtAuthor: String
-    createdAt: String
-    comments: [Comment]!
+    productName: String
+    price: Int
+    isActive: Boolean
+  }
+
+  type Image {
+    
   }
 
   type Comment {
     _id: ID
     commentText: String
     commentAuthor: String
-    createdAt: String
   }
 
   type Auth {
@@ -30,9 +42,9 @@ const typeDefs = `
   type Query {
     users: [User]
     user(username: String!): User
-    thoughts(username: String): [Thought]
-    thought(thoughtId: ID!): Thought
-    me: User
+    artist(artist: String!): Artist
+    comment(comment: String): Comment
+    // me: User if we need?
   }
 
   type Mutation {
