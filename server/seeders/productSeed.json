@@ -1,0 +1,38 @@
+[
+  {
+    "_id": "1",
+    "productName": "Oil Painting Set",
+    "price": 50,
+    "isActive": true
+  },
+  {
+    "_id": "2",
+    "productName": "Abstract Sculpture",
+    "price": 200,
+    "isActive": false
+  },
+  {
+    "_id": "3",
+    "productName": "Urban Landscape Photography Print",
+    "price": 75,
+    "isActive": true
+  },
+  {
+    "_id": "4",
+    "productName": "Identity and Culture Art Book",
+    "price": 30,
+    "isActive": true
+  },
+  {
+    "_id": "5",
+    "productName": "Fantasy Art Print",
+    "price": 20,
+    "isActive": false
+  },
+  {
+    "_id": "6",
+    "productName": "Minimalist Digital Art Poster",
+    "price": 15,
+    "isActive": false
+  }
+]
