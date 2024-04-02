@@ -2,24 +2,26 @@ const typeDefs = `
   type User {
     _id: ID
     username: String
-    email: String
-    password: String
-    thoughts: [Thought]!
+    email: String!
+    password: String!
+    FavArtists: [Artist]
   }
 
-  type Thought {
-    _id: ID
-    thoughtText: String
-    thoughtAuthor: String
-    createdAt: String
-    comments: [Comment]!
+  type Artist {
+    id: ID
+    name: String
+    description: String
+    location: String
+    image: [String]
+    products: [Product]
   }
 
-  type Comment {
+
+  type Product {
     _id: ID
-    commentText: String
-    commentAuthor: String
-    createdAt: String
+    productName: String
+    price: Int
+    isActive: Boolean
   }
 
   type Auth {
@@ -30,18 +32,18 @@ const typeDefs = `
   type Query {
     users: [User]
     user(username: String!): User
-    thoughts(username: String): [Thought]
-    thought(thoughtId: ID!): Thought
-    me: User
+    artist(artist: String!): Artist
+    product(id: ID!): Product
+    products(id: ID!): Product
   }
 
   type Mutation {
-    addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addThought(thoughtText: String!): Thought
-    addComment(thoughtId: ID!, commentText: String!): Thought
-    removeThought(thoughtId: ID!): Thought
-    removeComment(thoughtId: ID!, commentId: ID!): Thought
+    addUser(username: String!, email: String!, password: String!): Auth
+    addArtist(name: String!, description: String!, location: String!, image: [String]!, products: [ID]!): Artist
+    removeArtist(id: ID!): Artist
+    addProduct(artistId: ID!, productName: String!, price: Int!, isActive: Boolean!): Product
+    removeProduct(productId: ID!): Product
   }
 `;
 
