@@ -9,6 +9,7 @@ const resolvers = {
     user: async (parent, { username }) => {
       return User.findOne({ username }).populate('profile');
     },
+    
 
     product: async (parent, { id }) => {
       return Product.findById(id)
