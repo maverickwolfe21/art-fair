@@ -9,10 +9,7 @@ const typeDefs = `
 
   type Thought {
     _id: ID
-    thoughtText: String
-    thoughtAuthor: String
-    createdAt: String
-    comments: [Comment]!
+   name
   }
 
   type Comment {
