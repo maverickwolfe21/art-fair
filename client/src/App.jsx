@@ -36,6 +36,12 @@ function App() {
       <div className="flex-column justify-flex-start min-100-vh">
         <Header />
         <h1 className="text-3xl font-bold underline">Hello world!</h1>
+        <img
+          width={400}
+          height={400}
+          src="https://firebasestorage.googleapis.com/v0/b/art-fair-74891.appspot.com/o/ad-thumbnail-(50c).png?alt=media&token=cf208f83-f7cc-4626-b70f-bca668c60948"
+          alt="test"
+        />
         <div className="container">
           <Outlet />
         </div>
