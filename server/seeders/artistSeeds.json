@@ -1,50 +1,38 @@
 [
   {
-    "id": "1",
     "name": "John Smith",
     "description": "Painter specializing in landscapes and portraits.",
     "location": "New York City",
-    "image": ["https://example.com/john-smith.jpg"],
-    "products": []
+    "imageUrl": "https://example.com/john-smith.jpg"
   },
   {
-    "id": "2",
     "name": "Emily Brown",
     "description": "Sculptor creating modern abstract sculptures.",
     "location": "Los Angeles",
-    "image": ["https://example.com/emily-brown.jpg"],
-    "products": []
+    "imageUrl": "https://example.com/emily-brown.jpg"
   },
   {
-    "id": "3",
     "name": "Michael Johnson",
     "description": "Photographer capturing urban landscapes.",
     "location": "Chicago",
-    "image": ["https://example.com/michael-johnson.jpg"],
-    "products": []
+    "imageUrl": "https://example.com/michael-johnson.jpg"
   },
   {
-    "id": "4",
     "name": "Sophia Lee",
     "description": "Mixed media artist exploring themes of identity and culture.",
     "location": "San Francisco",
-    "image": ["https://example.com/sophia-lee.jpg"],
-    "products": []
+    "imageUrl": "https://example.com/sophia-lee.jpg"
   },
   {
-    "id": "5",
     "name": "David Rodriguez",
     "description": "Illustrator specializing in fantasy and science fiction art.",
     "location": "Seattle",
-    "image": ["https://example.com/david-rodriguez.jpg"],
-    "products": []
+    "imageUrl": "https://example.com/david-rodriguez.jpg"
   },
   {
-    "id": "6",
     "name": "Emma Taylor",
     "description": "Graphic designer creating minimalist digital art.",
     "location": "Austin",
-    "image": ["https://example.com/emma-taylor.jpg"],
-    "products": []
+    "imageUrl": "https://example.com/emma-taylor.jpg"
   }
 ]

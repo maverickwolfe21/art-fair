@@ -1,22 +1,31 @@
-const { User, Thought, } = require('../models');
-const { signToken, AuthenticationError } = require('../utils/auth');
+const { Artist, User, Product } = require("../models");
+const { signToken, AuthenticationError } = require("../utils/auth");
 
 const resolvers = {
   Query: {
     users: async () => {
-      return User.find().populate('user');
+      return User.find().populate("user");
     },
     user: async (parent, { username }) => {
-      return User.findOne({ username }).populate('profile');
+      return User.findOne({ username }).populate("profile");
     },
-    
 
     product: async (parent, { id }) => {
-      return Product.findById(id)
+      return Product.findById(id);
     },
 
-    artist: async (parent, { _id }) => {
-      return Artist.findOne({ _id: ID });
+    products: async (parent, { username }) => {
+      const params = username ? { username } : {};
+      return Product.find(params).sort({ createdAt: -1 });
+    },
+
+    artist: async (parent, { id }) => {
+      return Artist.findById(id);
+    },
+
+    artists: async (parent, { username }) => {
+      const params = username ? { username } : {};
+      return Artist.find(params).sort({ createdAt: -1 });
     },
   },
 
@@ -43,9 +52,7 @@ const resolvers = {
 
       return { token, user };
     },
-  }
-    
-   
-}
+  },
+};
 
 module.exports = resolvers;
