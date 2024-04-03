@@ -20,6 +20,7 @@ const SingleThought = () => {
 
   if (data) {
     console.log(data);
+    // console.log(products);
   }
   return <div className="my-3">Test product</div>;
 };
