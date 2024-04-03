@@ -31,7 +31,9 @@ How to use...
 [Visit the live page hosted on Render](https://art-fair.onrender.com/)
 
 ## Future Implementation:
-- Future stuff we could add
+- Adding aditional filters for searching the store. 
+- Adding the feature for artists to add their own products. 
+
 
 ## Contributors:
 - [Jesse Bradbury](https://github.com/jessebradbury)
