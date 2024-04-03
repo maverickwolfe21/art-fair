@@ -1,0 +1,44 @@
+[
+  {
+    "productName": "Oil Painting Set",
+    "price": 50,
+    "isActive": true,
+    "artistName": "John Smith",
+    "imageUrl": "https://example.com/sophia-lee.jpg"
+  },
+  {
+    "productName": "Abstract Sculpture",
+    "price": 200,
+    "isActive": false,
+    "artistName": "John Smith",
+    "imageUrl": "https://example.com/sophia-lee.jpg"
+  },
+  {
+    "productName": "Urban Landscape Photography Print",
+    "price": 75,
+    "isActive": true,
+    "artistName": "John Smith",
+    "imageUrl": "https://example.com/sophia-lee.jpg"
+  },
+  {
+    "productName": "Identity and Culture Art Book",
+    "price": 30,
+    "isActive": true,
+    "artistName": "John Smith",
+    "imageUrl": "https://example.com/sophia-lee.jpg"
+  },
+  {
+    "productName": "Fantasy Art Print",
+    "price": 20,
+    "isActive": false,
+    "artistName": "John Smith",
+    "imageUrl": "https://example.com/sophia-lee.jpg"
+  },
+  {
+    "productName": "Minimalist Digital Art Poster",
+    "price": 15,
+    "isActive": false,
+    "artistName": "John Smith",
+    "imageUrl": "https://example.com/sophia-lee.jpg"
+  }
+]
