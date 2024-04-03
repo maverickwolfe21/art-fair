@@ -32,9 +32,10 @@ const typeDefs = `
   type Query {
     users: [User]
     user(username: String!): User
-    artist(artist: String!): Artist
+    artist(id: String!): Artist
+    artists: [Artist]
     product(id: ID!): Product
-    products(username: String): [Product]
+    products: [Product]
   }
 
   type Mutation {

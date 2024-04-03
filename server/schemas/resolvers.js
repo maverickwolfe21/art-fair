@@ -1,4 +1,4 @@
-const { User, Product } = require("../models");
+const { Artist, User, Product } = require("../models");
 const { signToken, AuthenticationError } = require("../utils/auth");
 
 const resolvers = {
@@ -19,9 +19,14 @@ const resolvers = {
       return Product.find(params).sort({ createdAt: -1 });
     },
 
-    // artist: async (parent, { _id }) => {
-    //   return Artist.findOne({ _id: ID });
-    // },
+    artist: async (parent, { id }) => {
+      return Artist.findById(id);
+    },
+
+    artists: async (parent, { username }) => {
+      const params = username ? { username } : {};
+      return Artist.find(params).sort({ createdAt: -1 });
+    },
   },
 
   Mutation: {

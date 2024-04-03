@@ -9,6 +9,13 @@ const productSchema = new Schema({
     maxlength: 280,
     trim: true,
   },
+  artistName: {
+    type: String,
+  },
+  imageUrl: {
+    type: String,
+    required: true,
+  },
   price: {
     type: Number,
     required: true,
