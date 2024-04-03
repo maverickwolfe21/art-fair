@@ -34,7 +34,7 @@ const typeDefs = `
     user(username: String!): User
     artist(artist: String!): Artist
     product(id: ID!): Product
-    products(id: ID!): Product
+    products(username: String): [Product]
   }
 
   type Mutation {
