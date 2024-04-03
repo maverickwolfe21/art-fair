@@ -2,35 +2,55 @@ import { Link } from "react-router-dom";
 
 import Auth from "../../utils/auth";
 
+const style = "hover:underline underline-offset-2";
+
 const Header = () => {
   const logout = (event) => {
     event.preventDefault();
     Auth.logout();
   };
   return (
-    <header className="bg-primary text-light mb-4 py-3 flex-row align-center">
-      <div className="container flex-row justify-space-between-lg justify-center align-center">
+    <header className="w-screen flex justify-center mb-16">
+      <div className="flex w-4/5 justify-between p-5 items-center border-2 border-black bg-transparent text-black">
         <div>
-          <Link className="text-light" to="/">
-            <h1 className="m-0">Art Fair</h1>
+          <Link className="text-xl" to="/">
+            Art Fair
           </Link>
         </div>
-        <div>
+        <div className="flex gap-5">
           {Auth.loggedIn() ? (
             <>
-              <Link className="btn btn-lg btn-info m-2" to="/me">
-                {Auth.getProfile().data.username}'s profile
+              <Link className={style} to="/shop">
+                Shop
               </Link>
-              <button className="btn btn-lg btn-light m-2" onClick={logout}>
+              <Link className={style} to="/artists">
+                Artists
+              </Link>
+              <Link className={style} to="/about">
+                About the Fair
+              </Link>
+              <Link className={style} to="/favorites">
+                Favorites
+              </Link>
+              <button className="text-red-600" onClick={logout}>
                 Logout
               </button>
             </>
           ) : (
             <>
-              <Link className="btn btn-lg btn-info m-2" to="/login">
+              <Link className={style} to="/shop">
+                Shop
+              </Link>
+              <Link className={style} to="/artists">
+                Artists
+              </Link>
+              <Link className={style} to="/about">
+                About the Fair
+              </Link>
+              <Link className={style} to="/login">
                 Login
               </Link>
-              <Link className="btn btn-lg btn-light m-2" to="/signup">
+              <Link className={style} to="/signup">
                 Signup
               </Link>
             </>

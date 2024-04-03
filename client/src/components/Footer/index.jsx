@@ -1,30 +1,17 @@
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Footer = () => {
   const location = useLocation();
   const navigate = useNavigate();
   return (
-    <footer className="w-100 mt-auto bg-secondary p-4">
-      <div className="container text-center mb-5">
-        {location.pathname !== '/' && (
-          <button
-            className="btn btn-dark mb-3"
-            onClick={() => navigate(-1)}
-          >
-            &larr; Go Back
-          </button>
-        )}
+    <footer className="w-screen p-4">
+      <div className="text-center mb-5">
         <h4>
-          Made with{' '}
-          <span
-            className="emoji"
-            role="img"
-            aria-label="heart"
-            aria-hidden="false"
-          >
+          Made with{" "}
+          <span className="emoji" role="img" aria-label="heart" aria-hidden="false">
             ❤️
-          </span>{' '}
-          by the Tech Thoughts team.
+          </span>{" "}
+          by art connoisseurs.
         </h4>
       </div>
     </footer>
