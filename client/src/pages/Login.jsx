@@ -80,7 +80,7 @@ const Login = (props) => {
             </form>
           )}
 
-          {error && <div className="">{error.message}</div>}
+          {error && <div className="text-red-600 mt-2 text-center">{error.message}</div>}
         </div>
       </div>
     </main>
