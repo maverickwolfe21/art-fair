@@ -49,6 +49,15 @@ const Signup = () => {
             </p>
           ) : (
             <form className="flex flex-col w-full gap-1" onSubmit={handleFormSubmit}>
+              <label for="username">Username</label>
+              <input
+                className="border-2 border-black rounded-md bg-transparent text-black p-1"
+                placeholder="Your username"
+                name="username"
+                type="username"
+                value={formState.username}
+                onChange={handleChange}
+              />
               <label for="email">Email</label>
               <input
                 className="border-2 border-black rounded-md bg-transparent text-black p-1"
