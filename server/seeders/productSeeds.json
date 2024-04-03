@@ -4,62 +4,62 @@
     "price": 25,
     "isActive": true,
     "artistName": "Isabella Terra",
-    "imageUrl": "cp1"
+    "imageUrl": "https://cdn.discordapp.com/attachments/1184992990868033647/1224241519029125211/jayblesdrums_realistic_product_photography_high_def_with_profes_4fd7f364-4e37-4447-bcc9-355ba401f431.png?ex=661cc6c3&is=660a51c3&hm=76e46f552583179b03e9e63d8ea1bff7a5872722c5cc730ec7a3e29677d4f990&"
   },
   {
     "productName": "Cosmic Glaized Ceramic Cup 2",
     "price": 25,
     "isActive": true,
     "artistName": "Isabella Terra",
-    "imageUrl": "cp2"
+    "imageUrl": "https://cdn.discordapp.com/attachments/1184992990868033647/1224241513622536212/jayblesdrums_realistic_product_photography_high_def_with_profes_405f08d0-195c-4328-937a-b74ca836784b.png?ex=661cc6c2&is=660a51c2&hm=a6447b1c360a478e592a703968d8b25ab9278117c57c198f1519204858819b2a&"
   },
   {
     "productName": "Cosmic Glaized Ceramic Cup 3",
     "price": 25,
     "isActive": true,
     "artistName": "Isabella Terra",
-    "imageUrl": "cp3"
+    "imageUrl": "https://cdn.discordapp.com/attachments/1184992990868033647/1224241540042588232/jayblesdrums_realistic_product_photography_high_def_with_profes_4b096de7-047f-4fa5-a321-00024ffbe3f1.png?ex=661cc6c8&is=660a51c8&hm=3e766484139256f16be54ddb3a7ea4866da74352237fb5af1dc33ed558a7f5d6&"
   },
   {
     "productName": "Royal Stallion Portrait 1",
     "price": 75,
     "isActive": true,
     "artistName": "Olivia Sinclair",
-    "imageUrl": "hp1"
+    "imageUrl": "https://cdn.discordapp.com/attachments/1184992990868033647/1224234250274865185/jayblesdrums_realistic_product_photography_high_def_with_profes_59d1d387-0939-4036-9d7e-8e1757827047.png?ex=661cbffe&is=660a4afe&hm=d65143ca74317e2cf64ad55a243fbda7a8b0f65cf9ea87a10dfd46b0717f1319&"
   },
   {
     "productName": "Royal Stallion Portrait 2",
     "price": 75,
     "isActive": true,
     "artistName": "Olivia Sinclair",
-    "imageUrl": "hp2"
+    "imageUrl": "https://cdn.discordapp.com/attachments/1184992990868033647/1224234263839510558/jayblesdrums_realistic_product_photography_high_def_with_profes_2ed7eeee-5333-4e96-98e3-ba42f657fc6d.png?ex=661cc001&is=660a4b01&hm=558921f8d4ce30333db45d5b2bff99eab5cc9a0cf6f95fc22c6e976917661513&"
   },
   {
     "productName": "Royal Stallion Portrait 3",
     "price": 75,
     "isActive": true,
     "artistName": "Olivia Sinclair",
-    "imageUrl": "hp3"
+    "imageUrl": "https://cdn.discordapp.com/attachments/1184992990868033647/1224234276749312100/jayblesdrums_realistic_product_photography_high_def_with_profes_af7537c8-ecc4-4129-b88e-6180a539be84.png?ex=661cc004&is=660a4b04&hm=3770cb44f046ae4713f46d869a3d5282d8dd94c5f69178c747c96561b3b704dc&"
   },
   {
     "productName": "Rainbow Crystal Wind Chime 1",
     "price": 30,
     "isActive": true,
     "artistName": "Almarie Vasquez",
-    "imageUrl": "wc1"
+    "imageUrl": "https://cdn.discordapp.com/attachments/1184992990868033647/1224228132802789480/jayblesdrums_realistic_product_photography_high_def_with_profes_87a8465f-838c-44e3-a7ee-df1a19d85293.png?ex=661cba4b&is=660a454b&hm=0df801f97136cf3b73e0d09f48c7c4fe5ba5009bd96a47b8a3afac7af915bda4&"
   },
   {
     "productName": "Rainbow Crystal Wind Chime 2",
     "price": 30,
     "isActive": true,
     "artistName": "Almarie Vasquez",
-    "imageUrl": "wc2"
+    "imageUrl": "https://cdn.discordapp.com/attachments/1184992990868033647/1224228163249377320/jayblesdrums_realistic_product_photography_high_def_with_profes_19e144f7-3741-46fe-b34e-0c6e1515c55f.png?ex=661cba53&is=660a4553&hm=3b423fa83e812817d05f711b8d00aed962c83c02a0d42700ba8c7c1e6c6aab0c&"
   },
   {
     "productName": "Rainbow Crystal Wind Chime 3",
     "price": 30,
     "isActive": true,
     "artistName": "Almarie Vasquez",
-    "imageUrl": "wc3"
+    "imageUrl": "https://cdn.discordapp.com/attachments/1184992990868033647/1224228194647933059/jayblesdrums_realistic_product_photography_high_def_with_profes_96e3839e-bcd2-4ec9-9411-013d38c58cfd.png?ex=661cba5a&is=660a455a&hm=972858d471db3e63c1d029c7c69689de8508906784a1f8a776f765ee7a2d6c3c&"
   }
 ]

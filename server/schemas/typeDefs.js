@@ -22,6 +22,8 @@ const typeDefs = `
     productName: String
     price: Int
     isActive: Boolean
+    artistName: String
+    imageUrl: String
   }
 
   type Auth {
