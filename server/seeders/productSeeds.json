@@ -1,44 +1,65 @@
 [
   {
-    "productName": "Oil Painting Set",
-    "price": 50,
+    "productName": "Cosmic Glaized Ceramic Cup 1",
+    "price": 25,
     "isActive": true,
-    "artistName": "John Smith",
-    "imageUrl": "https://example.com/sophia-lee.jpg"
+    "artistName": "Isabella Terra",
+    "imageUrl": "cp1"
   },
   {
-    "productName": "Abstract Sculpture",
-    "price": 200,
-    "isActive": false,
-    "artistName": "John Smith",
-    "imageUrl": "https://example.com/sophia-lee.jpg"
+    "productName": "Cosmic Glaized Ceramic Cup 2",
+    "price": 25,
+    "isActive": true,
+    "artistName": "Isabella Terra",
+    "imageUrl": "cp2"
   },
   {
-    "productName": "Urban Landscape Photography Print",
+    "productName": "Cosmic Glaized Ceramic Cup 3",
+    "price": 25,
+    "isActive": true,
+    "artistName": "Isabella Terra",
+    "imageUrl": "cp3"
+  },
+  {
+    "productName": "Royal Stallion Portrait 1",
     "price": 75,
     "isActive": true,
-    "artistName": "John Smith",
-    "imageUrl": "https://example.com/sophia-lee.jpg"
+    "artistName": "Olivia Sinclair",
+    "imageUrl": "hp1"
   },
   {
-    "productName": "Identity and Culture Art Book",
+    "productName": "Royal Stallion Portrait 2",
+    "price": 75,
+    "isActive": true,
+    "artistName": "Olivia Sinclair",
+    "imageUrl": "hp2"
+  },
+  {
+    "productName": "Royal Stallion Portrait 3",
+    "price": 75,
+    "isActive": true,
+    "artistName": "Olivia Sinclair",
+    "imageUrl": "hp3"
+  },
+  {
+    "productName": "Rainbow Crystal Wind Chime 1",
     "price": 30,
     "isActive": true,
-    "artistName": "John Smith",
-    "imageUrl": "https://example.com/sophia-lee.jpg"
+    "artistName": "Almarie Vasquez",
+    "imageUrl": "wc1"
   },
   {
-    "productName": "Fantasy Art Print",
-    "price": 20,
-    "isActive": false,
-    "artistName": "John Smith",
-    "imageUrl": "https://example.com/sophia-lee.jpg"
+    "productName": "Rainbow Crystal Wind Chime 2",
+    "price": 30,
+    "isActive": true,
+    "artistName": "Almarie Vasquez",
+    "imageUrl": "wc2"
   },
   {
-    "productName": "Minimalist Digital Art Poster",
-    "price": 15,
-    "isActive": false,
-    "artistName": "John Smith",
-    "imageUrl": "https://example.com/sophia-lee.jpg"
+    "productName": "Rainbow Crystal Wind Chime 3",
+    "price": 30,
+    "isActive": true,
+    "artistName": "Almarie Vasquez",
+    "imageUrl": "wc3"
   }
 ]

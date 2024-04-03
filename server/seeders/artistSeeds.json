@@ -1,38 +1,20 @@
 [
   {
-    "name": "John Smith",
-    "description": "Painter specializing in landscapes and portraits.",
+    "name": "Isabella Terra",
+    "description": "Sculptor.",
     "location": "New York City",
-    "imageUrl": "https://example.com/john-smith.jpg"
+    "imageUrl": "cpa"
   },
   {
-    "name": "Emily Brown",
-    "description": "Sculptor creating modern abstract sculptures.",
+    "name": "Olivia Sinclair",
+    "description": "Paints pictures of horses",
     "location": "Los Angeles",
-    "imageUrl": "https://example.com/emily-brown.jpg"
+    "imageUrl": "hpa"
   },
   {
-    "name": "Michael Johnson",
-    "description": "Photographer capturing urban landscapes.",
-    "location": "Chicago",
-    "imageUrl": "https://example.com/michael-johnson.jpg"
-  },
-  {
-    "name": "Sophia Lee",
-    "description": "Mixed media artist exploring themes of identity and culture.",
-    "location": "San Francisco",
-    "imageUrl": "https://example.com/sophia-lee.jpg"
-  },
-  {
-    "name": "David Rodriguez",
-    "description": "Illustrator specializing in fantasy and science fiction art.",
-    "location": "Seattle",
-    "imageUrl": "https://example.com/david-rodriguez.jpg"
-  },
-  {
-    "name": "Emma Taylor",
-    "description": "Graphic designer creating minimalist digital art.",
-    "location": "Austin",
-    "imageUrl": "https://example.com/emma-taylor.jpg"
+    "name": "Almarie Vasquez",
+    "description": "Handmade crystal windchimes.",
+    "location": "Phoenix",
+    "imageUrl": "wca"
   }
 ]
