@@ -1,22 +1,26 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useQuery } from "@apollo/client";
 
-import { useMutation } from "@apollo/client";
+// import { useMutation } from "@apollo/client";
 
 import Auth from "../utils/auth";
+import { QUERY_PRODUCTS } from "../utils/queries";
+import ProductCard from "../components/ProductCard/index";
 
-const images = [
-  { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Robert_Downey%2C_Jr._2012.jpg/1200px-Robert_Downey%2C_Jr._2012.jpg" },
-  { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Robert_Downey%2C_Jr._2012.jpg/1200px-Robert_Downey%2C_Jr._2012.jpg" },
-  { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Robert_Downey%2C_Jr._2012.jpg/1200px-Robert_Downey%2C_Jr._2012.jpg" },
-  { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Robert_Downey%2C_Jr._2012.jpg/1200px-Robert_Downey%2C_Jr._2012.jpg" },
-  { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Robert_Downey%2C_Jr._2012.jpg/1200px-Robert_Downey%2C_Jr._2012.jpg" },
-  { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Robert_Downey%2C_Jr._2012.jpg/1200px-Robert_Downey%2C_Jr._2012.jpg" },
-];
+// const images = [
+//   { url: "https://cdn.discordapp.com/attachments/1184992990868033647/1224241540042588232/jayblesdrums_realistic_product_photography_high_def_with_profes_4b096de7-047f-4fa5-a321-00024ffbe3f1.png?ex=661cc6c8&is=660a51c8&hm=3e766484139256f16be54ddb3a7ea4866da74352237fb5af1dc33ed558a7f5d6&" },
+//   { url: "https://cdn.discordapp.com/attachments/1184992990868033647/1224241540042588232/jayblesdrums_realistic_product_photography_high_def_with_profes_4b096de7-047f-4fa5-a321-00024ffbe3f1.png?ex=661cc6c8&is=660a51c8&hm=3e766484139256f16be54ddb3a7ea4866da74352237fb5af1dc33ed558a7f5d6&" },
+//   { url: "https://cdn.discordapp.com/attachments/1184992990868033647/1224241540042588232/jayblesdrums_realistic_product_photography_high_def_with_profes_4b096de7-047f-4fa5-a321-00024ffbe3f1.png?ex=661cc6c8&is=660a51c8&hm=3e766484139256f16be54ddb3a7ea4866da74352237fb5af1dc33ed558a7f5d6&" },
+//   { url: "https://cdn.discordapp.com/attachments/1184992990868033647/1224241540042588232/jayblesdrums_realistic_product_photography_high_def_with_profes_4b096de7-047f-4fa5-a321-00024ffbe3f1.png?ex=661cc6c8&is=660a51c8&hm=3e766484139256f16be54ddb3a7ea4866da74352237fb5af1dc33ed558a7f5d6&" },
+//   { url: "https://cdn.discordapp.com/attachments/1184992990868033647/1224241540042588232/jayblesdrums_realistic_product_photography_high_def_with_profes_4b096de7-047f-4fa5-a321-00024ffbe3f1.png?ex=661cc6c8&is=660a51c8&hm=3e766484139256f16be54ddb3a7ea4866da74352237fb5af1dc33ed558a7f5d6&" },
+//   { url: "https://cdn.discordapp.com/attachments/1184992990868033647/1224241540042588232/jayblesdrums_realistic_product_photography_high_def_with_profes_4b096de7-047f-4fa5-a321-00024ffbe3f1.png?ex=661cc6c8&is=660a51c8&hm=3e766484139256f16be54ddb3a7ea4866da74352237fb5af1dc33ed558a7f5d6&" },
+// ];
 
 const Shop = () => {
   const [formState, setFormState] = useState({ text: "" });
   //   const [login, { error, data }] = useMutation(LOGIN_USER);
+  const { loading, error, data } = useQuery(QUERY_PRODUCTS);
 
   // update state based on form input changes
   const handleChange = (event) => {
@@ -46,6 +50,9 @@ const Shop = () => {
   const handleArtist = () => {};
   const handlePrice = () => {};
 
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error.message}</p>;
+
   return (
     <div className="w-screen flex flex-row p-5 justify-center gap-14">
       <div className="p-5 border-2 border-black">
@@ -68,13 +75,21 @@ const Shop = () => {
         </div>
       </div>
       {/* product grid */}
-      <div className="grid grid-cols-3 gap-5">
+      {/* <div className="grid grid-cols-3 gap-5">
         {images.map((img, index) => (
           <Link key={index} to={`/products/${img.id}`}>
             <img className="h-64 w-64 object-cover" src={img.url} alt="image" />
           </Link>
         ))}
+      </div> */}
+      <div className="grid grid-cols-3 gap-5">
+        {data.products.map((product) => (
+          <Link key={product._id} to={`/products/${product._id}`}>
+            <ProductCard product={product} /> {/* Render ProductCard component */}
+          </Link>
+        ))}
       </div>
+
     </div>
   );
 };

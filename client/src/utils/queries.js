@@ -33,6 +33,8 @@ export const QUERY_PRODUCTS = gql`
       isActive
       price
       productName
+      artistName
+      imageUrl
     }
   }
 `;
