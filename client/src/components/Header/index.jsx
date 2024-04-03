@@ -10,7 +10,7 @@ const Header = () => {
     Auth.logout();
   };
   return (
-    <header className="w-screen flex justify-center mb-16">
+    <header className="w-screen flex justify-center mb-8">
       <div className="flex w-4/5 justify-between p-5 items-center border-2 border-black bg-transparent text-black">
         <div>
           <Link className="text-xl" to="/">
