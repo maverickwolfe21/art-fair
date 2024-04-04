@@ -10,6 +10,7 @@ import SingleProduct from "./pages/SingleProduct";
 import Profile from "./pages/Profile";
 import Shop from "./pages/Shop";
 import ErrorPage from "./pages/ErrorPage";
+// import ArtistBody from "./components/ArtistUI/artistBody.jsx";
 
 const router = createBrowserRouter([
   {
