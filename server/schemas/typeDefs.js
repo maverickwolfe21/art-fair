@@ -8,7 +8,7 @@ const typeDefs = `
   }
 
   type Artist {
-    id: ID
+    _id: ID
     name: String
     description: String
     location: String
