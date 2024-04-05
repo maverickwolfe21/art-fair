@@ -9,7 +9,9 @@ import Artists from "./pages/Artists";
 import SingleProduct from "./pages/SingleProduct";
 import Profile from "./pages/Profile";
 import Shop from "./pages/Shop";
+import About from "./pages/About";
 import ErrorPage from "./pages/ErrorPage";
+
 // import ArtistBody from "./components/ArtistUI/artistBody.jsx";
 
 const router = createBrowserRouter([
@@ -39,6 +41,11 @@ const router = createBrowserRouter([
         path: "/artists",
         element: <Artists />,
       },
+      {
+        path: "/artists",
+        element: <About />,
+      },
+
       {
         path: "/profiles/:username",
         element: <Profile />,
