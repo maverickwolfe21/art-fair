@@ -16,7 +16,7 @@ const Artists = () => {
     return <div>Loading...</div>;
   }
   return (
-    <div className="flex w-screen justify-center px-2 bg-blue-400">
+    <div className="flex w-screen justify-center px-2">
       {/* I dont think this works but it is a place holder */}
       {/* <h2>{artists.name} </h2> */}
       <div className="grid grid-cols-3 gap-5">
