@@ -9,10 +9,10 @@ const typeDefs = `
 
   type Artist {
     _id: ID
-    name: String
+    name: String!
     description: String
     location: String
-    image: [String]
+    imageUrl: String
     products: [Product]
   }
 
