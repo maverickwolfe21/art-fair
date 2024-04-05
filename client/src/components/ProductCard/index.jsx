@@ -3,7 +3,7 @@ const ProductCard = ({ product }) => {
     return (
         <div className=" rounded-md shadow-lg w-60 mx-4 justify-center">
             <img
-                src={product.imageUrl} // Assuming you have an 'image' field in your product object
+                src={product.imageUrl} 
                 alt={product.productName}
                 className="object-cover w-full h-40 rounded-t-md"
             />
