@@ -27,6 +27,9 @@ const SingleArtist = () => {
       <h2>{artist.name}</h2>
       <h2>{artist.imageUrl}</h2>
       <h2>{artist.name}</h2>
+      <button className="mt-3 w-20 p-1 cursor-pointer border-2 border-black rounded-md bg-transparent text-black m-auto" type="submit">
+                Add Favorite
+              </button>
     </div>
   );
 };
