@@ -8,11 +8,11 @@ const typeDefs = `
   }
 
   type Artist {
-    id: ID
-    name: String
+    _id: ID
+    name: String!
     description: String
     location: String
-    image: [String]
+    imageUrl: String
     products: [Product]
   }
 
