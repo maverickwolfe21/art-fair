@@ -1,54 +1,58 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 
-// import { useMutation } from "@apollo/client";
-
-import Auth from "../utils/auth";
 import { QUERY_PRODUCTS } from "../utils/queries";
 import ProductCard from "../components/ProductCard/index";
 
-// const images = [
-//   { url: "https://cdn.discordapp.com/attachments/1184992990868033647/1224241540042588232/jayblesdrums_realistic_product_photography_high_def_with_profes_4b096de7-047f-4fa5-a321-00024ffbe3f1.png?ex=661cc6c8&is=660a51c8&hm=3e766484139256f16be54ddb3a7ea4866da74352237fb5af1dc33ed558a7f5d6&" },
-//   { url: "https://cdn.discordapp.com/attachments/1184992990868033647/1224241540042588232/jayblesdrums_realistic_product_photography_high_def_with_profes_4b096de7-047f-4fa5-a321-00024ffbe3f1.png?ex=661cc6c8&is=660a51c8&hm=3e766484139256f16be54ddb3a7ea4866da74352237fb5af1dc33ed558a7f5d6&" },
-//   { url: "https://cdn.discordapp.com/attachments/1184992990868033647/1224241540042588232/jayblesdrums_realistic_product_photography_high_def_with_profes_4b096de7-047f-4fa5-a321-00024ffbe3f1.png?ex=661cc6c8&is=660a51c8&hm=3e766484139256f16be54ddb3a7ea4866da74352237fb5af1dc33ed558a7f5d6&" },
-//   { url: "https://cdn.discordapp.com/attachments/1184992990868033647/1224241540042588232/jayblesdrums_realistic_product_photography_high_def_with_profes_4b096de7-047f-4fa5-a321-00024ffbe3f1.png?ex=661cc6c8&is=660a51c8&hm=3e766484139256f16be54ddb3a7ea4866da74352237fb5af1dc33ed558a7f5d6&" },
-//   { url: "https://cdn.discordapp.com/attachments/1184992990868033647/1224241540042588232/jayblesdrums_realistic_product_photography_high_def_with_profes_4b096de7-047f-4fa5-a321-00024ffbe3f1.png?ex=661cc6c8&is=660a51c8&hm=3e766484139256f16be54ddb3a7ea4866da74352237fb5af1dc33ed558a7f5d6&" },
-//   { url: "https://cdn.discordapp.com/attachments/1184992990868033647/1224241540042588232/jayblesdrums_realistic_product_photography_high_def_with_profes_4b096de7-047f-4fa5-a321-00024ffbe3f1.png?ex=661cc6c8&is=660a51c8&hm=3e766484139256f16be54ddb3a7ea4866da74352237fb5af1dc33ed558a7f5d6&" },
-// ];
-
 const Shop = () => {
-  const [formState, setFormState] = useState({ text: "" });
+  const [text, setText] = useState("");
   //   const [login, { error, data }] = useMutation(LOGIN_USER);
   const { loading, error, data } = useQuery(QUERY_PRODUCTS);
+  const [products, setProducts] = useState([]);
+
+  const initialRender = useRef(true);
+
+  useEffect(() => {}, [products, text]);
 
   // update state based on form input changes
   const handleChange = (event) => {
-    const { name, value } = event.target;
-
-    setFormState({
-      ...formState,
-      [name]: value,
-    });
+    if (event.target.value === "") {
+      setProducts(data?.products);
+    }
+    setText(event.target.value);
   };
 
   // submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log(formState);
     try {
+      if (text.length !== 0) {
+        setProducts(
+          products.length > 0
+            ? products?.filter((p) => p.productName.toLowerCase().includes(text))
+            : data?.products?.filter((p) => p.productName.toLowerCase().includes(text))
+        );
+      } else {
+        setProducts(data?.products);
+      }
+      initialRender.current = false;
     } catch (e) {
       console.error(e);
     }
-
-    // clear form values
-    setFormState({
-      text: "",
-    });
   };
 
-  const handleArtist = () => {};
-  const handlePrice = () => {};
+  const handleArtist = () => {
+    const tempData = products.length > 0 ? [...products] : [...data?.products];
+    setProducts(tempData?.sort((a, b) => a.artistName.localeCompare(b.artistName)));
+  };
+  const handlePrice = () => {
+    const tempData = products.length > 0 ? [...products] : [...data?.products];
+    setProducts(tempData?.sort((a, b) => a.price - b.price));
+  };
+  const handleDefault = () => {
+    setProducts(data?.products?.filter((p) => p.productName.toLowerCase().includes(text)));
+  };
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
@@ -57,39 +61,46 @@ const Shop = () => {
     <div className="w-screen flex flex-row p-5 justify-center gap-14">
       <div className="p-5 border-2 border-black">
         {/* Searchbar */}
-        <form className="w-56" onSubmit={handleFormSubmit}>
+        <form className="w-56 flex gap-2 justify-center" onSubmit={handleFormSubmit}>
           <input
             className="placeholder:text-black border-2 border-black rounded-md bg-transparent text-black p-1"
-            placeholder="Search by name"
+            placeholder="Search by product name"
             name="text"
             type="text"
-            value={formState.text}
+            value={text}
             onChange={handleChange}
           />
+          <button type="submit" className="font-semibold placeholder:text-black border-2 border-black rounded-md bg-transparent text-black p-1">
+            GO
+          </button>
         </form>
         <div className="flex flex-col items-start mt-2">
           <button className="cursor-pointer" onClick={handleArtist}>
-            Sort by artist
+            Sort By Artist
           </button>
-          <button onClick={handlePrice}>Sort by price</button>
+          <button onClick={handlePrice}>Sort By Price</button>
+          <button onClick={handleDefault}>Sort By Default</button>
         </div>
       </div>
       {/* product grid */}
-      {/* <div className="grid grid-cols-3 gap-5">
-        {images.map((img, index) => (
-          <Link key={index} to={`/products/${img.id}`}>
-            <img className="h-64 w-64 object-cover" src={img.url} alt="image" />
-          </Link>
-        ))}
-      </div> */}
-      <div className="grid grid-cols-3 gap-5">
-        {data.products.map((product) => (
-          <Link key={product._id} to={`/products/${product._id}`}>
-            <ProductCard product={product} /> {/* Render ProductCard component */}
-          </Link>
-        ))}
-      </div>
 
+      <div className="grid grid-cols-3 gap-2 gap-y-6">
+        {text?.length > 0 && initialRender.current === false && products?.length === 0 ? (
+          <h2>No data was found.</h2>
+        ) : products?.length > 0 ? (
+          products?.map((product) => (
+            <Link key={product._id} to={`/products/${product._id}`}>
+              <ProductCard product={product} /> {/* Render ProductCard component */}
+            </Link>
+          ))
+        ) : (
+          data.products?.map((product) => (
+            <Link key={product._id} to={`/products/${product._id}`}>
+              <ProductCard product={product} /> {/* Render ProductCard component */}
+            </Link>
+          ))
+        )}
+      </div>
     </div>
   );
 };

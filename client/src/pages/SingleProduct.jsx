@@ -27,7 +27,6 @@ const SingleProduct = () => {
       <h2>{product.name}</h2>
       <h2>{product.imageUrl}</h2>
       <h2>{product.artistName}</h2>
-      <h2>{product.imageUrl}</h2>
       <h2>{product.isActive}</h2>
       <h2>${product.price}</h2>
     </div>
