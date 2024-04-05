@@ -19,7 +19,7 @@ const userSchema = new Schema({
     required: true,
     minlength: 5,
   },
-  thoughts: [
+  favoriteArtists: [
     {
       type: Schema.Types.ObjectId,
       ref: "Thought",
