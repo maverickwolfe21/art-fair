@@ -8,11 +8,11 @@ const typeDefs = `
   }
 
   type Artist {
-    id: ID
-    name: String
+    _id: ID
+    name: String!
     description: String
     location: String
-    image: [String]
+    imageUrl: String
     products: [Product]
   }
 
@@ -34,7 +34,7 @@ const typeDefs = `
   type Query {
     users: [User]
     user(username: String!): User
-    artist(id: String!): Artist
+    artist(id: ID!): Artist
     artists: [Artist]
     product(id: ID!): Product
     products: [Product]

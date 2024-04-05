@@ -9,6 +9,7 @@ db.once("open", async () => {
   try {
     await cleanDB("User", "users");
     await cleanDB("Product", "products");
+    await cleanDB("Artist", "artists")
 
     await User.create(userSeeds);
     await Artist.create(artistSeeds);

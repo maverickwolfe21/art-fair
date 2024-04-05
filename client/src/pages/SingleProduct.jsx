@@ -4,7 +4,7 @@ import { useQuery } from "@apollo/client";
 
 import { QUERY_SINGLE_PRODUCT } from "../utils/queries";
 
-const SingleThought = () => {
+const SingleProduct = () => {
   // Use `useParams()` to retrieve value of the route parameter `:id`
   const { id } = useParams();
 
@@ -33,4 +33,4 @@ const SingleThought = () => {
   );
 };
 
-export default SingleThought;
+export default SingleProduct;

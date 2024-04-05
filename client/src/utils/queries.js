@@ -18,10 +18,23 @@ export const QUERY_USER = gql`
 export const QUERY_ARTISTS = gql`
   query getArtists {
     artists {
-      id
+      _id
       name
       description
       location
+      imageUrl
+    }
+  }
+`;
+
+export const QUERY_SINGLE_ARTIST = gql`
+  query getArtist($id: ID!) {
+    artist(id: $id) {
+      _id
+      name
+      description
+      location
+      imageUrl
     }
   }
 `;

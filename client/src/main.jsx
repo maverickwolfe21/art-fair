@@ -7,9 +7,11 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Artists from "./pages/Artists";
 import SingleProduct from "./pages/SingleProduct";
+import SingleArtist from "./pages/SingleArtist";
 import Profile from "./pages/Profile";
 import Shop from "./pages/Shop";
 import ErrorPage from "./pages/ErrorPage";
+import About from "./pages/About";
 // import ArtistBody from "./components/ArtistUI/artistBody.jsx";
 
 const router = createBrowserRouter([
@@ -38,6 +40,14 @@ const router = createBrowserRouter([
       {
         path: "/artists",
         element: <Artists />,
+      },
+      {
+        path: "/artists/:id",
+        element: <SingleArtist />,
+      },
+  {
+        path: "/about",
+        element: <About />,
       },
       {
         path: "/profiles/:username",
