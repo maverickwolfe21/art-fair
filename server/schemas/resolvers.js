@@ -4,8 +4,15 @@ const { signToken, AuthenticationError } = require("../utils/auth");
 const resolvers = {
   Query: {
     users: async () => {
-      return User.find().populate("user");
+    
+        // Fetch users from the database
+        const users = await User.find();
+        return users;
+       
     },
+    // users: async () => {
+    //   return User.find().populate("user");
+    // },
     user: async (parent, { username }) => {
       return User.findOne({ username }).populate("profile");
     },

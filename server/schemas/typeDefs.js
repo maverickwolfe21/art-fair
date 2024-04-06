@@ -32,7 +32,7 @@ const typeDefs = `
   }
 
   type Query {
-    users: [User]
+    users: [User!]
     user(username: String!): User
     artist(id: ID!): Artist
     artists: [Artist]

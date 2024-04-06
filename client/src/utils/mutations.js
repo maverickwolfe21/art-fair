@@ -25,7 +25,7 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_FAVORITE = gql`
-  mutation addFavorite($artistId: String!) {
+  mutation addFavorite($artistId: ID!) {
     addFavorite(artistId: $artistId) {
       _id
       }
