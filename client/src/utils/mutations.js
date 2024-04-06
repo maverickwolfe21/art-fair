@@ -24,19 +24,13 @@ export const ADD_USER = gql`
   }
 `;
 
-export const ADD_THOUGHT = gql`
-  mutation addThought($thoughtText: String!) {
-    addThought(thoughtText: $thoughtText) {
+export const ADD_FAVORITE = gql`
+  mutation addFavorite($artistId: String!) {
+    addFavorite(artistId: $artistId) {
       _id
-      thoughtText
-      thoughtAuthor
-      createdAt
-      comments {
-        _id
-        commentText
       }
     }
-  }
+  
 `;
 
 export const ADD_COMMENT = gql`

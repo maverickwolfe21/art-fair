@@ -22,7 +22,7 @@ const userSchema = new Schema({
   favoriteArtists: [
     {
       type: Schema.Types.ObjectId,
-      ref: "Thought",
+      ref: "Artist",
     },
   ],
 });

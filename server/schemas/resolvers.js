@@ -35,6 +35,22 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
+    addFavorite: async (parent, { artistId }, { user }) => {
+      if (!user) {
+        throw new AuthenticationError('You must be logged in to add favorites')
+      }
+      try {
+        const updatedUser = await User.findByIdAndUpdate(
+          user._id,
+          { $addToSet: { favoriteArtists: artistId } },
+          { new: true }
+        );
+
+        return updatedUser;
+      } catch (error) {
+        throw new Error('Failed to add favorite artist: ' + error.message);
+      }
+    },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
 
