@@ -5,10 +5,10 @@ Digital art street festival!
 
 
 ## Description:
-Art Fair is a digtial art gallery where users can view, save, and even upload their own arts and crafts to be purchased by art connoisseurs from across the world!
+Art Fair is a digital art gallery where users can view, save, and even upload their own arts and crafts to be purchased by art connoisseurs from across the world!
 
 
-This is a exercise in using handlebars, express routers, object relational mapping, sequilize with SQL for interacting with our database, and node.js.  
+This is a exercise in using handlebars, express routers, object relational mapping, Sequilize with SQL for interacting with our database, and node.js.  
 
 ## Table of Contents:
   - [Installation](#installation)
@@ -31,7 +31,7 @@ How to use...
 [Visit the live page hosted on Render](https://art-fair.onrender.com/)
 
 ## Future Implementation:
-- Adding aditional filters for searching the store. 
+- Adding additional filters for searching the store. 
 - Adding the feature for artists to add their own products. 
 
 
