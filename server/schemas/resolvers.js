@@ -14,7 +14,7 @@ const resolvers = {
     //   return User.find().populate("user");
     // },
     user: async (parent, { username }) => {
-      return User.findOne({ username }).populate("favoriteArtists");
+      return User.findOne({ username });
     },
 
     me: async (parent, args, { user }) => {
@@ -42,6 +42,9 @@ const resolvers = {
     },
     
   },
+
+  // This did not work... Should possibly be removed.  
+
   // User: {
   //   favoriteArtists: async (parent, args, context) => {
   //     // Ensure user is authenticated before fetching favorite artists
@@ -85,7 +88,25 @@ const resolvers = {
       } catch (error) {
         throw new Error('Failed to add favorite artist: ' + error.message);
       }
+
     },
+    removeFavorite: async (parent, { artistId }, { user }) => {
+      if (!user) {
+        throw new AuthenticationError('You must be logged in to remove favorites')
+      }
+      try {
+        const updatedUser = await User.findByIdAndUpdate(
+          user._id,
+          { $pull: { favoriteArtists: artistId } },
+          { new: true }
+        );
+
+        return updatedUser;
+      } catch (error) {
+        throw new Error('Failed to remove favorite artist: ' + error.message);
+      }
+    },
+
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
 

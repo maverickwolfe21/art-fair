@@ -47,6 +47,7 @@ const typeDefs = `
     addArtist(name: String!, description: String!, location: String!, image: [String]!, products: [ID]!): Artist
     removeArtist(id: ID!): Artist
     addFavorite(artistId: ID!): User 
+    removeFavorite(artistId: ID!): User
     addProduct(artistId: ID!, productName: String!, price: Int!, isActive: Boolean!): Product
     removeProduct(productId: ID!): Product
   }

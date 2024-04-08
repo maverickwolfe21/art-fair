@@ -89,7 +89,6 @@ export const QUERY_ME = gql`
       email
       favoriteArtists {
         _id
-        name
       }
     }
   }

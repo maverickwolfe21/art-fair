@@ -54,14 +54,14 @@ const SingleArtist = () => {
   const artist = artistData?.artist || {};
 
   
-  // const currentUser = meData?.me || {};
-  // const isFavorite = currentUser.favoriteArtists.includes(id);
+  const currentUser = meData?.me || {};
+  // const isFavorite = currentUser?.favoriteArtists.includes(id);
 
   if (artistLoading) {
     return <div>Loading...</div>;
   }
 
-  console.log(meData);
+  console.log(currentUser);
 
   return (
     <div className="my-3">
@@ -69,9 +69,12 @@ const SingleArtist = () => {
       <h2>{artist.name}</h2>
       <h2>{artist.imageUrl}</h2>
       <h2>{artist.name}</h2>
-      <button className="mt-3 w-20 p-1 cursor-pointer border-2 border-black rounded-md bg-transparent text-black m-auto" onClick={handleAddFavorite}>
-        {/* {isFavorite ? "Remove Favorite" : "Add Favorite"} */}
+      <button className="mt-3 w-20 p-1 cursor-pointer border-2 border-black rounded-md bg-transparent text-black m-auto" 
+      onClick={handleAddFavorite}
+      // onClick={handleFavoriteAction}
+      >
         Add Favorite
+        {/* {isFavorite ? "Remove Favorite" : "Add Favorite"} */}
       </button>
     </div>
   );
