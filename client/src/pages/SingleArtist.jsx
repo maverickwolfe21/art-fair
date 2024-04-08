@@ -1,25 +1,67 @@
 // Import the `useParams()` hook
 import { useParams } from "react-router-dom";
-import { useQuery } from "@apollo/client";
+import { useQuery, useMutation } from "@apollo/client";
 
-import { QUERY_SINGLE_ARTIST } from "../utils/queries";
+import { QUERY_SINGLE_ARTIST, QUERY_ME } from "../utils/queries";
+import { ADD_FAVORITE, REMOVE_FAVORITE } from "../utils/mutations";
+// const favoriteButtonEvent = async (event) => { 
+//   // When user clicks the Add Favorite button, we will use the ADD_FAVORITE mutation to add the id of the artist to the favoriteArtists [] on the user currently signed in. 
+
+
+//   };
+
 
 const SingleArtist = () => {
   // Use `useParams()` to retrieve value of the route parameter `:id`
   const { id } = useParams();
-
-  const { loading, data } = useQuery(QUERY_SINGLE_ARTIST, {
-    // pass URL parameter
+  const { loading: artistLoading, data: artistData } = useQuery(QUERY_SINGLE_ARTIST, {
     variables: { id: id },
   });
+  const { loading: meLoading, data: meData } = useQuery(QUERY_ME);
 
-  const artist = data?.artist || {};
+  const [addFavorite] = useMutation(ADD_FAVORITE);
+  const [removeFavorite] = useMutation(REMOVE_FAVORITE);
 
-  if (loading) {
+  const handleAddFavorite = async () => {
+    try {
+      await addFavorite({
+        variables: { artistId: id },
+      });
+      console.log("Artist added to favorites!")
+    } catch (error) {
+      console.error("Error adding artist to favorites");
+    }
+  };
+
+  // const handleFavoriteAction = async () => {
+  //   try {
+  //     if (isFavorite) {
+  //       await removeFavorite({
+  //         variables: { artistId: id },
+  //       });
+  //       console.log("Artist removed from favorites!");
+  //     } else {
+  //       await addFavorite({
+  //         variables: { artistId: id },
+  //       });
+  //       console.log("Artist added to favorites!");
+  //     }
+  //   } catch (error) {
+  //     console.error("Error updating favorites:", error);
+  //   }
+  // };
+
+  const artist = artistData?.artist || {};
+
+  
+  const currentUser = meData?.me || {};
+  // const isFavorite = currentUser?.favoriteArtists.includes(id);
+
+  if (artistLoading) {
     return <div>Loading...</div>;
   }
 
-  console.log(data);
+  console.log(currentUser);
 
   return (
     <div className="my-3">
@@ -27,9 +69,13 @@ const SingleArtist = () => {
       <h2>{artist.name}</h2>
       <h2>{artist.imageUrl}</h2>
       <h2>{artist.name}</h2>
-      <button className="mt-3 w-20 p-1 cursor-pointer border-2 border-black rounded-md bg-transparent text-black m-auto" type="submit">
-                Add Favorite
-              </button>
+      <button className="mt-3 w-20 p-1 cursor-pointer border-2 border-black rounded-md bg-transparent text-black m-auto" 
+      onClick={handleAddFavorite}
+      // onClick={handleFavoriteAction}
+      >
+        Add Favorite
+        {/* {isFavorite ? "Remove Favorite" : "Add Favorite"} */}
+      </button>
     </div>
   );
 };

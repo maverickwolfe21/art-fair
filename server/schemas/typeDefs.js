@@ -4,7 +4,7 @@ const typeDefs = `
     username: String
     email: String!
     password: String!
-    FavArtists: [Artist]
+    favoriteArtists: [Artist]
   }
 
   type Artist {
@@ -32,12 +32,13 @@ const typeDefs = `
   }
 
   type Query {
-    users: [User]
+    users: [User!]
     user(username: String!): User
     artist(id: ID!): Artist
     artists: [Artist]
     product(id: ID!): Product
     products: [Product]
+    me: User
   }
 
   type Mutation {
@@ -45,6 +46,8 @@ const typeDefs = `
     addUser(username: String!, email: String!, password: String!): Auth
     addArtist(name: String!, description: String!, location: String!, image: [String]!, products: [ID]!): Artist
     removeArtist(id: ID!): Artist
+    addFavorite(artistId: ID!): User 
+    removeFavorite(artistId: ID!): User
     addProduct(artistId: ID!, productName: String!, price: Int!, isActive: Boolean!): Product
     removeProduct(productId: ID!): Product
   }
