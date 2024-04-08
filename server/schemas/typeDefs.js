@@ -38,6 +38,7 @@ const typeDefs = `
     artists: [Artist]
     product(id: ID!): Product
     products: [Product]
+    me: User
   }
 
   type Mutation {

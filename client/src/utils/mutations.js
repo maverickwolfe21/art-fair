@@ -33,6 +33,14 @@ export const ADD_FAVORITE = gql`
   
 `;
 
+export const REMOVE_FAVORITE = gql`
+  mutation removeFavorite($artistId: ID!) {
+    removeFavorite(artistId: $artistId) {
+      _id
+    }
+  }
+`;
+
 export const ADD_COMMENT = gql`
   mutation addComment($thoughtId: ID!, $commentText: String!) {
     addComment(thoughtId: $thoughtId, commentText: $commentText) {

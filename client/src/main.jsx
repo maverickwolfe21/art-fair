@@ -12,6 +12,7 @@ import Profile from "./pages/Profile";
 import Shop from "./pages/Shop";
 import ErrorPage from "./pages/ErrorPage";
 import About from "./pages/About";
+import Favorites from "./pages/Favorites";
 // import ArtistBody from "./components/ArtistUI/artistBody.jsx";
 
 const router = createBrowserRouter([
@@ -60,6 +61,10 @@ const router = createBrowserRouter([
       {
         path: "/products/:id",
         element: <SingleProduct />,
+      },
+      {
+        path: "/favorites",
+        element: <Favorites />,
       },
     ],
   },

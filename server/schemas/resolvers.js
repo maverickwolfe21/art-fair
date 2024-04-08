@@ -14,9 +14,15 @@ const resolvers = {
     //   return User.find().populate("user");
     // },
     user: async (parent, { username }) => {
-      return User.findOne({ username }).populate("profile");
+      return User.findOne({ username }).populate("favoriteArtists");
     },
 
+    me: async (parent, args, { user }) => {
+      if (!user) {
+        throw new AuthenticationError('You must be logged in to view your profile');
+      }
+      return user;
+    },
     product: async (parent, { id }) => {
       return Product.findById(id);
     },
@@ -34,8 +40,30 @@ const resolvers = {
       const params = username ? { username } : {};
       return Artist.find(params).sort({ createdAt: -1 });
     },
+    
   },
+  // User: {
+  //   favoriteArtists: async (parent, args, context) => {
+  //     // Ensure user is authenticated before fetching favorite artists
+  //     if (!context.user) {
+  //       throw new Error('Authentication required');
+  //     }
 
+  //     try {
+  //       // Fetch the authenticated user
+  //       const user = await User.findById(context.user.id);
+  //       if (!user) {
+  //         throw new Error('User not found');
+  //       }
+
+  //       // Return the favorite artists associated with the user
+  //       return user.favoriteArtists;
+  //     } catch (error) {
+  //       console.error(error);
+  //       throw new Error('Failed to fetch favorite artists');
+  //     }
+  //   },
+  // },
   Mutation: {
     addUser: async (parent, { username, email, password }) => {
       const user = await User.create({ username, email, password });

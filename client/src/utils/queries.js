@@ -18,6 +18,19 @@ export const QUERY_USER = gql`
   }
 `;
 
+export const GET_FAVORITE_ARTISTS = gql`
+query GetFavoriteArtists {
+  user {
+    favoriteArtists {
+      _id
+      name
+      imageUrl
+      
+    }
+  }
+}
+`;
+
 export const QUERY_ARTISTS = gql`
   query getArtists {
     artists {
@@ -74,11 +87,9 @@ export const QUERY_ME = gql`
       _id
       username
       email
-      thoughts {
+      favoriteArtists {
         _id
-        thoughtText
-        thoughtAuthor
-        createdAt
+        name
       }
     }
   }
