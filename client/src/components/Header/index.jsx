@@ -83,7 +83,7 @@ const Header = () => {
   };
 
   return (
-    <div>
+    <div className="mb-8">
       <AppBar sx={{ bgcolor: "transparent" }} className="flex items-center" elevation={0} color="default" position="relative" open={open}>
         <div className="flex w-screen lg:w-4/5 justify-between p-5 items-center border-2 border-black bg-transparent text-black">
           <div className="cursor-pointer">
