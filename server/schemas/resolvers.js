@@ -21,7 +21,7 @@ const resolvers = {
       if (!user) {
         throw new AuthenticationError('You must be logged in to view your profile');
       }
-      return user;
+      return User.findById(user._id).populate('favoriteArtists');
     },
     product: async (parent, { id }) => {
       return Product.findById(id);

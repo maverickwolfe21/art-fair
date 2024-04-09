@@ -1,10 +1,12 @@
 // Import the `useParams()` hook
 import { useParams } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useQuery, useMutation } from "@apollo/client";
+
 
 import { QUERY_SINGLE_ARTIST, QUERY_ME } from "../utils/queries";
 import { ADD_FAVORITE, REMOVE_FAVORITE } from "../utils/mutations";
+import { useApp } from "../utils/app-context";
 // const favoriteButtonEvent = async (event) => { 
 //   // When user clicks the Add Favorite button, we will use the ADD_FAVORITE mutation to add the id of the artist to the favoriteArtists [] on the user currently signed in. 
 
@@ -15,7 +17,6 @@ import { ADD_FAVORITE, REMOVE_FAVORITE } from "../utils/mutations";
 const SingleArtist = () => {
   // Use `useParams()` to retrieve value of the route parameter `:id`
   const { id } = useParams();
-  const signedUser = useState(user)
   const { loading: artistLoading, data: artistData } = useQuery(QUERY_SINGLE_ARTIST, {
     variables: { id: id },
   });
@@ -35,6 +36,13 @@ const SingleArtist = () => {
   //   }
   // };
 
+  
+  const currentUser = meData?.me || {};
+  useEffect(() => {}, [currentUser]);
+  console.log(currentUser)
+  // Check to see if current artist already exists in favorite artists array
+  const isFavorite = currentUser?.favoriteArtists?.some(artist => artist._id === id);
+console.log(isFavorite)
   const handleFavoriteAction = async () => {
     try {
       if (isFavorite) {
@@ -55,10 +63,7 @@ const SingleArtist = () => {
 
   const artist = artistData?.artist || {};
 
-  
-  const currentUser = meData?.me || {};
-  console.log(currentUser)
-  const isFavorite = currentUser?.favoriteArtists?.includes(id);
+
 
   if (artistLoading || meLoading) {
     return <div>Loading...</div>;
@@ -71,9 +76,9 @@ const SingleArtist = () => {
       <h2>{artist.name}</h2>
       <h2>{artist.imageUrl}</h2>
       <h2>{artist.name}</h2>
-      <button className="mt-3 w-20 p-1 cursor-pointer border-2 border-black rounded-md bg-transparent text-black m-auto" 
-      // onClick={handleAddFavorite}
-      onClick={handleFavoriteAction}
+      <button className="mt-3 w-20 p-1 cursor-pointer border-2 border-black rounded-md bg-transparent text-black m-auto"
+        // onClick={handleAddFavorite}
+        onClick={handleFavoriteAction}
       >
         {/* Add Favorite */}
         {isFavorite ? "Remove Favorite" : "Add Favorite"}
