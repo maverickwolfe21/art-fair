@@ -23,10 +23,8 @@ const SingleArtist = () => {
 
   const currentUser = meData?.me || {};
   useEffect(() => {}, [currentUser]);
-  console.log(currentUser);
   // Check to see if current artist already exists in favorite artists array
   const isFavorite = currentUser?.favoriteArtists?.some((artist) => artist._id === id);
-  console.log(isFavorite);
   const handleFavoriteAction = async () => {
     try {
       if (isFavorite) {

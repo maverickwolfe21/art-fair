@@ -39,7 +39,7 @@ const Home = () => {
       <SplashBannerLg />
       <div className="w-screen flex justify-center mb-2">
         <div className="flex w-4/5 justify-center py-6 items-center border-black bg-transparent text-black">
-          <h2 className="font-medium text-xl lg:text-2xl">Hand made directly by the artists for you!</h2>
+          <h2 className="text-xl lg:text-xl">Hand made directly by the artists for you!</h2>
         </div>
       </div>
       <div className="w-screen flex justify-center mb-2">
