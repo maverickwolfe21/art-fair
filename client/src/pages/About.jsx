@@ -23,17 +23,16 @@ const About = () => {
     <div className="w-screen flex flex-col items-center gap-4">
       <div className="flex flex-col gap-5">
         <div className="font-medium text-xl text-center">Meet the Artists</div>
-        <div className="flex flex-col lg:flex-row justify-center gap-5">
+        <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 lg:gap-5">
           {artists.map((artist) => (
-            // Log artist object
             <Link key={artist._id} to={`/artists/${artist._id}`}>
-              <ArtistCard key={artist.id} artist={artist} style={{ textAlign: "center" }} />
+              <ArtistCard artist={artist} /> {/* Render ArtistCard component */}
             </Link>
           ))}
         </div>
       </div>
       <div className="w-screen flex justify-center">
-        <p className="w-full px-16 py-5 lg:w-2/4">
+        <p className="w-full px-16 py-5 lg:w-3/4 2xl:w-3/6">
           At Arts Studios, we are dedicated to highlight top of class artists and showcase great arts and features on all kinds of styles. Please be
           sure to contribute and support the site by donating!
         </p>
