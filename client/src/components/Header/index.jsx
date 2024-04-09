@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 
-import Auth from "../../utils/auth";
-
 import { useState, useRef, useEffect } from "react";
 
 import { styled, useTheme } from "@mui/material/styles";
+
+import { useApp } from "../../utils/app-context";
 
 import { Hidden } from "@mui/material";
 import Box from "@mui/material/Box";
@@ -64,13 +64,14 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 }));
 
 const Header = () => {
+  const { logout, loggedIn } = useApp();
+
   const theme = useTheme();
   const [open, setOpen] = useState(false);
   const ref = useRef(null);
 
-  const logout = (event) => {
-    event.preventDefault();
-    Auth.logout();
+  const handleLogout = (event) => {
+    logout();
   };
 
   const handleDrawerOpen = () => {
@@ -98,7 +99,7 @@ const Header = () => {
 
           <Hidden lgDown>
             <div className="flex gap-5">
-              {Auth.loggedIn() ? (
+              {loggedIn() ? (
                 <>
                   <Link className={style} to="/shop">
                     Shop
@@ -112,7 +113,7 @@ const Header = () => {
                   <Link className={style} to="/favorites">
                     Favorites
                   </Link>
-                  <button className="text-red-600" onClick={logout}>
+                  <button className="text-red-600" onClick={handleLogout}>
                     Logout
                   </button>
                 </>
@@ -171,9 +172,32 @@ const Header = () => {
                 </Link>
               </ListItem>
             ))}
-            <ListItemButton onClick={logout}>
-              <ListItemText className=" text-red-500" primary="Log Out" />
-            </ListItemButton>
+
+            {loggedIn() ? (
+              <ListItem disablePadding>
+                <ListItemButton
+                  onClick={() => {
+                    handleLogout();
+                    handleDrawerClose();
+                  }}
+                >
+                  <ListItemText className=" text-red-500" primary="Log Out" />
+                </ListItemButton>
+              </ListItem>
+            ) : (
+              <div>
+                <Link className="w-full" to={"/login"} onClick={handleDrawerClose}>
+                  <ListItemButton>
+                    <ListItemText className="text-black" primary={"Log In"} />
+                  </ListItemButton>
+                </Link>
+                <Link className="w-full" to={"signup"} onClick={handleDrawerClose}>
+                  <ListItemButton>
+                    <ListItemText className="text-black" primary={"Sign Up"} />
+                  </ListItemButton>
+                </Link>
+              </div>
+            )}
           </List>
         </Drawer>
       </Hidden>

@@ -22,8 +22,12 @@ const SingleArtist = () => {
   });
   const { loading: meLoading, data: meData } = useQuery(QUERY_ME);
 
-  const [addFavorite] = useMutation(ADD_FAVORITE);
-  const [removeFavorite] = useMutation(REMOVE_FAVORITE);
+  const [addFavorite] = useMutation(ADD_FAVORITE, {
+    refetchQueries: [{ query: QUERY_ME }]
+  });
+  const [removeFavorite] = useMutation(REMOVE_FAVORITE, {
+    refetchQueries: [{ query: QUERY_ME }]
+  });
 
   // const handleAddFavorite = async () => {
   //   try {
