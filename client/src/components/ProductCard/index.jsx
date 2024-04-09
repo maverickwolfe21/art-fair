@@ -1,6 +1,6 @@
 const ProductCard = ({ product }) => {
   return (
-    <div className="rounded-md shadow-lg w-60 mx-4 justify-center hover:scale-105 transition-all duration-150">
+    <div className="rounded-md shadow-lg w-80 lg:w-60 mx-4 justify-center hover:scale-105 transition-all duration-150">
       <img
         src={product.imageUrl} // Assuming you have an 'image' field in your product object
         alt={product.productName}
