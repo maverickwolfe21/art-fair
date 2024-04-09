@@ -8,6 +8,7 @@ import ArtistCard from "../components/ArtistCard/index";
 const Artists = () => {
   const { loading, data } = useQuery(QUERY_ARTISTS);
   const artists = data?.artists || [];
+
   // const description = data?.description || [];
   // test push
 
@@ -15,10 +16,10 @@ const Artists = () => {
     return <div>Loading...</div>;
   }
   return (
-    <div className="flex w-screen justify-center px-2">
+    <div className="flex w-screen justify-center px-2 mb-3">
       {/* I dont think this works but it is a place holder */}
       {/* <h2>{artists.name} </h2> */}
-      <div className="grid grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 lg:gap-5">
         {artists.map((artist) => (
           <Link key={artist._id} to={`/artists/${artist._id}`}>
             <ArtistCard artist={artist} /> {/* Render ArtistCard component */}
