@@ -84,9 +84,11 @@ const Shop = () => {
       </div>
       {/* product grid */}
 
-      <div className="flex flex-col gap-7 md:grid md:grid-cols-2 md:gap-2 md:gap-y-6 xl:grid xl:grid-cols-3 xl:gap-2 xl:gap-y-6">
+      <div className="flex flex-col justify-center gap-7 md:grid md:grid-cols-2 md:gap-2 md:gap-y-6 xl:grid xl:grid-cols-3 xl:gap-2 xl:gap-y-6">
         {text?.length > 0 && initialRender.current === false && products?.length === 0 ? (
-          <h2>No data was found.</h2>
+          <h2 className="w-96">
+            We couldn't find any products with the name you specified. Please make sure you spelled it correctly and try again!
+          </h2>
         ) : products?.length > 0 ? (
           products?.map((product) => (
             <Link key={product._id} to={`/products/${product._id}`}>

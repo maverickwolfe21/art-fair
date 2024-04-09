@@ -32,18 +32,18 @@ const features = [
 ];
 
 const Home = () => {
-  const {user} = useApp()
-  console.log("USER HOME:", user)
+  const { user } = useApp();
+  console.log("USER HOME:", user);
   return (
     <div>
       <SplashBannerLg />
       <div className="w-screen flex justify-center mb-2">
-        <div className="flex w-4/5 justify-center p-5 items-center border-black bg-transparent text-black">
-          <h2>Hand made directly from the artists to you!</h2>
+        <div className="flex w-4/5 justify-center py-6 items-center border-black bg-transparent text-black">
+          <h2 className="font-medium text-xl lg:text-2xl">Hand made directly by the artists for you!</h2>
         </div>
       </div>
       <div className="w-screen flex justify-center mb-2">
-        <div className="flex w-4/5 justify-center">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-3 lg:grid-cols-3 lg:gap-5">
           {features.map((feature, index) => (
             <Link key={index} to={feature.link}>
               <HomeCard key={index} feature={feature} />

@@ -5,15 +5,12 @@ import { useQuery, useMutation } from "@apollo/client";
 
 import { QUERY_SINGLE_ARTIST, QUERY_ME } from "../utils/queries";
 import { ADD_FAVORITE, REMOVE_FAVORITE } from "../utils/mutations";
-import { useApp } from "../utils/app-context";
 
 const SingleArtist = () => {
   // Use `useParams()` to retrieve value of the route parameter `:id`
   const { id } = useParams();
   const { loading: artistLoading, data: artistData } = useQuery(QUERY_SINGLE_ARTIST, {
-    variables: {
-      id: id,
-    },
+    variables: { id: id },
   });
   const { loading: meLoading, data: meData } = useQuery(QUERY_ME);
 
@@ -34,16 +31,12 @@ const SingleArtist = () => {
     try {
       if (isFavorite) {
         await removeFavorite({
-          variables: {
-            artistId: id,
-          },
+          variables: { artistId: id },
         });
         console.log("Artist removed from favorites!");
       } else {
         await addFavorite({
-          variables: {
-            artistId: id,
-          },
+          variables: { artistId: id },
         });
         console.log("Artist added to favorites!");
       }
