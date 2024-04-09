@@ -1,5 +1,11 @@
 [
   {
+    "name": "Franklin Smithson",
+    "description": "Hand carved birds",
+    "location": "Portland, Oregon",
+    "imageUrl": "https://cdn.discordapp.com/attachments/1184992990868033647/1224247619253964902/jayblesdrums_portrait_photography_of_a_happy_african_american_m_f3b9d872-7086-46d7-9c27-72613b2caacf.png?ex=662606f1&is=661391f1&hm=1153ceaf8933557522e5f0d3f5737da55c84d7f07aa468f4335cdf7ce235e7f1&"
+  },
+  {
     "name": "Isabella Terra",
     "description": "Sculptor.",
     "location": "New York City",
@@ -8,13 +14,25 @@
   {
     "name": "Olivia Sinclair",
     "description": "Paints pictures of horses",
-    "location": "Los Angeles",
+    "location": "Los Angeles, California",
     "imageUrl": "https://cdn.discordapp.com/attachments/1184992990868033647/1224243756048453633/jayblesdrums_portrait_photography_of_a_happy_artist_woman_who_p_599aaf0c-af6e-4ca1-a2e4-2ee3fbdf7b06.png?ex=661cc8d8&is=660a53d8&hm=1512d9c439e48f92076964b7bb0a8a16a948a84bd0f3df65a02e0a021bc21ddc&"
   },
   {
     "name": "Almarie Vasquez",
     "description": "Handmade crystal windchimes.",
-    "location": "Phoenix",
+    "location": "Phoenix, Arizona",
+    "imageUrl": "https://cdn.discordapp.com/attachments/1184992990868033647/1224248363919081482/jayblesdrums_portrait_photography_of_a_happy_hispanic_woman_wea_ca88b25d-cd6b-4825-8e05-b1922c9b160f.png?ex=661ccd23&is=660a5823&hm=11472f5b0ca535a8ce3ebd21b855e1b2bbf8595a2177baaaed7ad5ee0f079210&"
+  },
+  {
+    "name": "Kim Lee",
+    "description": "Knitted Teddy Bears",
+    "location": "Omaha, Nebraska",
+    "imageUrl": "https://cdn.discordapp.com/attachments/1184992990868033647/1224245545342861352/jayblesdrums_portrait_photography_of_a_happy_asian_woman_who_kn_cf33e8a5-903a-453d-99d4-eadb9fc65f6f.png?ex=66260503&is=66139003&hm=2438e48a9691e16f82908b8871b7071cbd806747ed030142abf7196fc6d1649e&"
+  },
+  {
+    "name": "Almarie Vasquez",
+    "description": "Handmade crystal windchimes.",
+    "location": "Phoenix, Arizona",
     "imageUrl": "https://cdn.discordapp.com/attachments/1184992990868033647/1224248363919081482/jayblesdrums_portrait_photography_of_a_happy_hispanic_woman_wea_ca88b25d-cd6b-4825-8e05-b1922c9b160f.png?ex=661ccd23&is=660a5823&hm=11472f5b0ca535a8ce3ebd21b855e1b2bbf8595a2177baaaed7ad5ee0f079210&"
   }
 ]
