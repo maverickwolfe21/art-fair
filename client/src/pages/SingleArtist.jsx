@@ -36,13 +36,13 @@ const SingleArtist = () => {
   //   }
   // };
 
-  
+
   const currentUser = meData?.me || {};
-  useEffect(() => {}, [currentUser]);
+  useEffect(() => { }, [currentUser]);
   console.log(currentUser)
   // Check to see if current artist already exists in favorite artists array
   const isFavorite = currentUser?.favoriteArtists?.some(artist => artist._id === id);
-console.log(isFavorite)
+  console.log(isFavorite)
   const handleFavoriteAction = async () => {
     try {
       if (isFavorite) {
@@ -72,15 +72,12 @@ console.log(isFavorite)
 
   return (
     <div className="my-3">
-      <h2>{artist._id}</h2>
       <h2>{artist.name}</h2>
-      <h2>{artist.imageUrl}</h2>
-      <h2>{artist.name}</h2>
+      <img src={artist.imageUrl} alt={artist.name} />
+      <p>{artist.description}</p>
       <button className="mt-3 w-20 p-1 cursor-pointer border-2 border-black rounded-md bg-transparent text-black m-auto"
-        // onClick={handleAddFavorite}
         onClick={handleFavoriteAction}
       >
-        {/* Add Favorite */}
         {isFavorite ? "Remove Favorite" : "Add Favorite"}
       </button>
     </div>
