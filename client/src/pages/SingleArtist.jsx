@@ -1,4 +1,4 @@
-// Import the `useParams()` hook
+3// Import the `useParams()` hook
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useQuery, useMutation } from "@apollo/client";
@@ -22,8 +22,12 @@ const SingleArtist = () => {
   });
   const { loading: meLoading, data: meData } = useQuery(QUERY_ME);
 
-  const [addFavorite] = useMutation(ADD_FAVORITE);
-  const [removeFavorite] = useMutation(REMOVE_FAVORITE);
+  const [addFavorite] = useMutation(ADD_FAVORITE, {
+    refetchQueries: [{ query: QUERY_ME }]
+  });
+  const [removeFavorite] = useMutation(REMOVE_FAVORITE, {
+    refetchQueries: [{ query: QUERY_ME }]
+  });
 
   // const handleAddFavorite = async () => {
   //   try {
@@ -36,13 +40,13 @@ const SingleArtist = () => {
   //   }
   // };
 
-  
+
   const currentUser = meData?.me || {};
-  useEffect(() => {}, [currentUser]);
+  useEffect(() => { }, [currentUser]);
   console.log(currentUser)
   // Check to see if current artist already exists in favorite artists array
   const isFavorite = currentUser?.favoriteArtists?.some(artist => artist._id === id);
-console.log(isFavorite)
+  console.log(isFavorite)
   const handleFavoriteAction = async () => {
     try {
       if (isFavorite) {
@@ -71,16 +75,19 @@ console.log(isFavorite)
 
 
   return (
-    <div className="my-3">
-      <h2>{artist._id}</h2>
-      <h2>{artist.name}</h2>
-      <h2>{artist.imageUrl}</h2>
-      <h2>{artist.name}</h2>
+    <div className=" w-4/5 justify-center px-2">
+      <div className= " w-4/5 justify-center p-5 items-center" >
+        <h2>{artist.name}</h2>
+        <img src={artist.imageUrl} alt={artist.name} />
+      </div>
+      <div>
+      <p>{artist.location}</p>
+      <p>{artist.description}</p>
+
+      </div>
       <button className="mt-3 w-20 p-1 cursor-pointer border-2 border-black rounded-md bg-transparent text-black m-auto"
-        // onClick={handleAddFavorite}
         onClick={handleFavoriteAction}
       >
-        {/* Add Favorite */}
         {isFavorite ? "Remove Favorite" : "Add Favorite"}
       </button>
     </div>
