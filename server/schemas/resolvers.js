@@ -14,7 +14,7 @@ const resolvers = {
     //   return User.find().populate("user");
     // },
     user: async (parent, { username }) => {
-      return User.findOne({ username });
+      return User.findOne({ username }).populate('favoriteArtists');
     },
 
     me: async (parent, args, { user }) => {

@@ -2,11 +2,12 @@ import { Navigate, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 
 import { QUERY_USER, QUERY_ME } from "../utils/queries";
+import { useApp } from "../utils/app-context";
 
-import Auth from "../utils/auth";
 
 const Profile = () => {
   const { username: userParam } = useParams();
+  const {loggedIn, state} = useApp()
 
   const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
     variables: { username: userParam },
@@ -14,7 +15,7 @@ const Profile = () => {
 
   const user = data?.me || data?.user || {};
   // navigate to personal profile page if username is yours
-  if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
+  if (loggedIn() && state.user.username === userParam) {
     return <Navigate to="/me" />;
   }
 

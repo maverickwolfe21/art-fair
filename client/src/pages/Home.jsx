@@ -5,6 +5,7 @@ import { QUERY_PRODUCTS } from "../utils/queries";
 
 import SplashBannerLg from "../components/SplashBannerLg";
 import HomeCard from "../components/HomeCard";
+import { useApp } from "../utils/app-context";
 
 const features = [
   {
@@ -28,6 +29,8 @@ const features = [
 ]
 
 const Home = () => {
+  const {user} = useApp()
+  console.log("USER HOME:", user)
   return (
     <div>
       <SplashBannerLg />
