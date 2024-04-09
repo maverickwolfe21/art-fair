@@ -58,10 +58,10 @@ const Shop = () => {
   if (error) return <p>Error: {error.message}</p>;
 
   return (
-    <div className="w-screen flex flex-row p-5 justify-center gap-14">
-      <div className="p-5 border-2 border-black">
+    <div className="w-screen flex flex-col items-center lg:items-start gap-4 lg:w-screen lg:flex lg:flex-row lg:p-5 lg:justify-center lg:gap-14">
+      <div className="lg:flex lg:flex-col lg:p-5 lg:border-2 lg:border-black">
         {/* Searchbar */}
-        <form className="w-56 flex gap-2 justify-center" onSubmit={handleFormSubmit}>
+        <form className="w-56 flex gap-2 justify-center " onSubmit={handleFormSubmit}>
           <input
             className="placeholder:text-black border-2 border-black rounded-md bg-transparent text-black p-1"
             placeholder="Search by product name"
@@ -74,7 +74,7 @@ const Shop = () => {
             GO
           </button>
         </form>
-        <div className="flex flex-col items-start mt-2">
+        <div className="hidden lg:flex lg:flex-col lg:items-start lg:mt-2">
           <button className="cursor-pointer" onClick={handleArtist}>
             Sort By Artist
           </button>
@@ -84,7 +84,7 @@ const Shop = () => {
       </div>
       {/* product grid */}
 
-      <div className="grid grid-cols-3 gap-2 gap-y-6">
+      <div className="flex flex-col gap-7 md:grid md:grid-cols-2 md:gap-2 md:gap-y-6 xl:grid xl:grid-cols-3 xl:gap-2 xl:gap-y-6">
         {text?.length > 0 && initialRender.current === false && products?.length === 0 ? (
           <h2>No data was found.</h2>
         ) : products?.length > 0 ? (

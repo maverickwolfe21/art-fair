@@ -13,7 +13,6 @@ import Shop from "./pages/Shop";
 import ErrorPage from "./pages/ErrorPage";
 import About from "./pages/About";
 import Favorites from "./pages/Favorites";
-// import ArtistBody from "./components/ArtistUI/artistBody.jsx";
 
 const router = createBrowserRouter([
   {

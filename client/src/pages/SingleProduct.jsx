@@ -24,10 +24,10 @@ const SingleProduct = () => {
   const handleClick = () => {};
 
   return (
-    <div className="my-3 flex justify-center gap-10">
+    <div className="flex items-center flex-col lg:my-3 lg:flex-row lg:justify-center lg:gap-10">
       <img className="h-96 w-96 object-contain" src={product.imageUrl} alt={product.name}></img>
-      <div className="flex flex-col gap-2">
-        <div>
+      <div className="flex w-96 flex-col gap-3">
+        <div className="flex flex-col items-start">
           <h2 className="font-semibold text-2xl">{product.productName}</h2>
           <h2>By {product.artistName}</h2>
         </div>
