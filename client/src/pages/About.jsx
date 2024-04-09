@@ -4,7 +4,9 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { QUERY_ARTISTS } from "../utils/queries";
 import AboutDesc from "../components/AboutDesc/AboutDesc.jsx";
-import DonateInput from "../components/AboutInput/input.jsx";
+// import DonateInput from "../components/AboutInput/input.jsx";
+import Contact from "../components/AboutDesc/Contact/index.jsx";
+import ContactBannerOne from "../components/AboutDesc/Contact/contactBanner.jsx"
 
 const About = () => {
   const { loading, data } = useQuery(QUERY_ARTISTS);
@@ -38,13 +40,13 @@ const About = () => {
 
   const handleDeleteClick = () => {
     if (donationCount > 0) {
-        //decrement donation count
-        setDonationCount(donationCount - 1);
+      //decrement donation count
+      setDonationCount(donationCount - 1);
     }
-  }
-  
-  return ( //to move the art studios to the center
-    <div> 
+  };
+
+  return (
+    <div>
       <div className="flex w-screen justify-center px-3">
         {/* Render artists here */}
         {artists.map((artist) => (
@@ -64,30 +66,37 @@ const About = () => {
         illum.
       </p>
       {/* Render Description */}
+
       <section key={artists} className="bg-white">
-        <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6  justify-center">
-          <div className="max-w-screen-md flex justify-content-"> {/* Center the AboutDesc component */}
-            <AboutDesc />
+        <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6 flex justify-center">
+          {" "}
+          {/* Adjusted to the right */}
+          <div className="max-w-screen-md flex justify-content-">
+            {/* Center the AboutDesc component */}
+            <AboutDesc></AboutDesc>
           </div>
           <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4"></div>
         </div>
       </section>
       <div className="flex justify-center">
-      <button
+        <button
           type="button"
-          className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+          className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-red-700 focus:outline-none dark:focus:ring-blue-800"
           onClick={handleDeleteClick} // Attach onClick event handler for decreasing
         >
           Remove
         </button>
         <button
           type="button"
-          className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+          className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
           onClick={handleDonateClick} // Attach onClick event handler for increasing
         >
           Donate ({donationCount}) {/* Display donation count */}
         </button>
+        <div></div>
       </div>
+      <ContactBannerOne/>
+      <Contact></Contact>
     </div>
   );
 };
