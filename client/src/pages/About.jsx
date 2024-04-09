@@ -51,7 +51,7 @@ const About = () => {
         {/* Render artists here */}
         {artists.map((artist) => (
           // Log artist object
-          <div key={artist.id} style={{ textAlign: "center" }}>
+          <div key={artist._id} style={{ textAlign: "center" }}>
             {artist.name}
           </div>
         ))}
@@ -59,15 +59,12 @@ const About = () => {
       <div className="grid place-items-center">
         {letterClass} Meet the Artists
       </div>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, autem
-        placeat! Pariatur veniam obcaecati quis, harum, perferendis earum
-        asperiores qui dolor, expedita error ducimus dicta! Sint at dolor magnam
-        illum.
-      </p>
+      <div class="center">
+
+</div>
       {/* Render Description */}
 
-      <section key={artists} className="bg-white">
+      <section className="bg-white">
         <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6 flex justify-center">
           {" "}
           {/* Adjusted to the right */}
