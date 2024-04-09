@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
+import { useApp } from "../../utils/app-context";
 
-import Auth from "../../utils/auth";
 
 const style = "hover:underline underline-offset-2";
 
 const Header = () => {
-  const logout = (event) => {
+  const {logout, loggedIn} = useApp()
+  const handleLogout = (event) => {
     event.preventDefault();
-    Auth.logout();
+    logout();
   };
   return (
     <header className="w-screen flex justify-center mb-8">
@@ -18,7 +19,7 @@ const Header = () => {
           </Link>
         </div>
         <div className="flex gap-5">
-          {Auth.loggedIn() ? (
+          {loggedIn() ? (
             <>
               <Link className={style} to="/shop">
                 Shop
@@ -32,7 +33,7 @@ const Header = () => {
               <Link className={style} to="/favorites">
                 Favorites
               </Link>
-              <button className="text-red-600" onClick={logout}>
+              <button className="text-red-600" onClick={handleLogout}>
                 Logout
               </button>
             </>
