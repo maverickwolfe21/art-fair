@@ -21,14 +21,21 @@ const SingleProduct = () => {
 
   console.log(product);
 
+  const handleClick = () => {};
+
   return (
-    <div className="my-3">
-      <h2>{product._id}</h2>
-      <h2>{product.name}</h2>
-      <h2>{product.imageUrl}</h2>
-      <h2>{product.artistName}</h2>
-      <h2>{product.isActive}</h2>
-      <h2>${product.price}</h2>
+    <div className="my-3 flex justify-center gap-10">
+      <img className="h-96 w-96 object-contain" src={product.imageUrl} alt={product.name}></img>
+      <div className="flex flex-col gap-2">
+        <div>
+          <h2 className="font-semibold text-2xl">{product.productName}</h2>
+          <h2>By {product.artistName}</h2>
+        </div>
+        <h2 className="font-semibold text-xl">${product.price}</h2>
+        <button onClick={handleClick} className="p-1 cursor-pointer border-2 border-black rounded-md bg-transparent text-black">
+          Add to Cart
+        </button>
+      </div>
     </div>
   );
 };

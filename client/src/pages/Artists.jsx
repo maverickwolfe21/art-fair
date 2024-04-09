@@ -1,12 +1,11 @@
-import { useQuery } from '@apollo/client';
+import { useQuery } from "@apollo/client";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-// This will pull the data from all the Artists. 
-import { QUERY_ARTISTS } from '../utils/queries';
+// This will pull the data from all the Artists.
+import { QUERY_ARTISTS } from "../utils/queries";
 import ArtistCard from "../components/ArtistCard/index";
 const Artists = () => {
-
   const { loading, data } = useQuery(QUERY_ARTISTS);
   const artists = data?.artists || [];
   // const description = data?.description || [];
@@ -26,7 +25,6 @@ const Artists = () => {
           </Link>
         ))}
       </div>
-
     </div>
   );
 };
