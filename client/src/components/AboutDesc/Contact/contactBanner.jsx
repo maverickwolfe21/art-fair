@@ -8,7 +8,7 @@ const ContactBannerOne = () => {
             className="w-full h-full object-cover"
           />
           <div className="absolute bottom-0 right-0 pr-16 py-4">
-          <h2 className="text-white text-2xl font-bold">Artist of the Month</h2>
+          <h2 className="text-white text-2xl font-bold">About The Artist</h2>
           </div>
         </div>
       </div>

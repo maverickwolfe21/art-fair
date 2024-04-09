@@ -34,16 +34,18 @@ const About = () => {
       </div>
       <div className="w-screen flex justify-center lg:mt-5">
         <p className="w-full p-5 lg:w-2/4 lg:p-0">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, autem placeat! Pariatur veniam obcaecati quis, harum, perferendis earum
-          asperiores qui dolor, expedita error ducimus dicta! Sint at dolor magnam illum.
+        At Arts Studios, we are dedicated to highlight top of class artists and showcase great arts and features on all kinds of styles. Please be sure to contribute and support the site by donating 
         </p>
       </div>
       {/* Render Description */}
+      <ContactBannerOne>
+        
+      </ContactBannerOne>
 
       <div className="lg:mt-5 flex justify-center mb-3">
         <button
           type="button"
-          className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+          className="text-white bg-blue-700 hover:bg-light-blue-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
           onClick={handleDonateClick} // Attach onClick event handler for increasing
         >
           Donate
