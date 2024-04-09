@@ -8,6 +8,7 @@ import ArtistCard from "../components/ArtistCard/index";
 const Artists = () => {
   const { loading, data } = useQuery(QUERY_ARTISTS);
   const artists = data?.artists || [];
+
   // const description = data?.description || [];
   // test push
 
