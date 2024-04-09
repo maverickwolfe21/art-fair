@@ -45,7 +45,7 @@ export const AppProvider = ({ children }) => {
     }
 
     const loggedIn = () => {
-        const token = JSON.parse(localStorage.getItem('app_state') || '{}').token
+        const token = JSON.parse(localStorage.getItem('app_state'))?.token
         // If there is a token and it's not expired, return `true`
         return token && !isTokenExpired(token);
     }
