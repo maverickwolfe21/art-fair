@@ -1,4 +1,4 @@
-// Import the `useParams()` hook
+3// Import the `useParams()` hook
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useQuery, useMutation } from "@apollo/client";
@@ -75,10 +75,16 @@ const SingleArtist = () => {
 
 
   return (
-    <div className="my-3">
-      <h2>{artist.name}</h2>
-      <img src={artist.imageUrl} alt={artist.name} />
+    <div className=" w-4/5 justify-center px-2">
+      <div className= " w-4/5 justify-center p-5 items-center" >
+        <h2>{artist.name}</h2>
+        <img src={artist.imageUrl} alt={artist.name} />
+      </div>
+      <div>
+      <p>{artist.location}</p>
       <p>{artist.description}</p>
+
+      </div>
       <button className="mt-3 w-20 p-1 cursor-pointer border-2 border-black rounded-md bg-transparent text-black m-auto"
         onClick={handleFavoriteAction}
       >
