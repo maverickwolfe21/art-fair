@@ -10,14 +10,14 @@ import { useApp } from "../utils/app-context";
 const features = [
   {
     imageUrl:
-      "https://cdn.discordapp.com/attachments/1184992990868033647/1225658247332233276/jayblesdrums_High_quality_photography_of_a_street_art_fair_boot_18e20f4b-cca6-4bff-9a8d-8d437ed4b1ed.png?ex=6621ee31&is=660f7931&hm=caae85b56f83b2f48c533ebfca7dcae309aa7e4f20db49a71a0134e6cb261d11&",
+      "https://cdn.discordapp.com/attachments/1184992990868033647/1225657863993557012/jayblesdrums_High_quality_photography_of_a_street_art_fair_boot_ddeec5d1-8855-4a92-b3f3-06c7293f17d7.png?ex=6621edd6&is=660f78d6&hm=caadb9378e8b416777ea8e9a656c3ffe3a9dbf51fb69e63e6ece258a68ad94d7&",
     title: "Browse Our Products",
     splash: "New products featured weekly",
     link: "/shop",
   },
   {
     imageUrl:
-      "https://cdn.discordapp.com/attachments/1184992990868033647/1227018042861551708/jayblesdrums_Happy_Artists_b981e971-6edc-4d71-8cf5-cdd01ffc76b2.png?ex=6626e09a&is=66146b9a&hm=4b47eb2f227b481d499e1ba9118a3fa11b7d48dbf342933d4945cd904a9af172&",
+      "https://cdn.discordapp.com/attachments/1184992990868033647/1227018621482700902/jayblesdrums_Happy_Artists_b4943c78-8b0f-4363-a1b2-3fb64e4c3f13.png?ex=6626e124&is=66146c24&hm=3814b80171b699345dd31674ca0e480248baee8923524eaa7fca7a0882ba63e6&",
     title: "Learn About The Fair",
     splash: "Who we are",
     link: "/about",
